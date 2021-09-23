@@ -8,9 +8,12 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 10.00f;
     private float vInput;
     private float hInput;
-    
+    public GameObject Projectile;
+    public Vector3 offset = new Vector3(0,1,0);
     public float xRange = 9.98f;
     public float yRange = 4.5f;
+
+    
 
     // Update is called once per frame
     void Update()
@@ -41,6 +44,12 @@ public class PlayerController : MonoBehaviour
         if(transform.position.y < -yRange)
         {
             transform.position = new Vector3(transform.position.x, -yRange, transform.position.z);
+        }
+
+        //Shoots bullet
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(Projectile, transform.position + offset, Projectile.transform.rotation);
         }
     }
 }
