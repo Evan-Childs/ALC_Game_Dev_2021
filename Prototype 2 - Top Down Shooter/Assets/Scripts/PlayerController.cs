@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         //Moves Player Character
         transform.Translate(Vector3.up * speed * Time.deltaTime * vInput);
         //Rotates Player Character
-        transform.Rotate(Vector3.forward, turnSpeed * Time.deltaTime * hInput);
+        transform.Rotate(Vector3.forward, -turnSpeed * Time.deltaTime * hInput);
         //creates left and right walls
         if(transform.position.x > xRange)
         {
