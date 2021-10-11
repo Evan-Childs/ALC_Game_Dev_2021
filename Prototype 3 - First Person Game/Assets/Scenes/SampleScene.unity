@@ -617,9 +617,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  lookSensitivity: 0
-  maxLookX: 0
-  minLookX: 0
+  jumpForce: 5
+  lookSensitivity: 5
+  maxLookX: 45
+  minLookX: -45
 --- !u!1 &1808315139
 GameObject:
   m_ObjectHideFlags: 0
