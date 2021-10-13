@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 1479097635}
   - component: {fileID: 1479097634}
   - component: {fileID: 1479097639}
+  - component: {fileID: 1479097640}
   m_Layer: 0
   m_Name: BEEEEAAAANNNNNN(Player)
   m_TagString: Untagged
@@ -621,6 +622,24 @@ MonoBehaviour:
   lookSensitivity: 5
   maxLookX: 45
   minLookX: -45
+--- !u!114 &1479097640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479097633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444a12cc575e0449994e4537557f48e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  muzzle: {fileID: 0}
+  curAmmo: 0
+  maxAmmo: 0
+  infiniteAmmo: 0
+  shootRate: 0
 --- !u!1 &1808315139
 GameObject:
   m_ObjectHideFlags: 0
