@@ -15,14 +15,14 @@ public class PlayerController : MonoBehaviour
     //Gameobjects & Component variables
     private Camera cam;
     private Rigidbody rb;
-    private Weapon weapon;
+    private Weapons weapons;
 
     void Awake()
     {
         //Get the components
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
-        weapon = GetComponent<Weapons>();
+        weapons = GetComponent<Weapons>();
         //Disable cursor
         Cursor.lockState = CursorLockMode.Locked;
     }

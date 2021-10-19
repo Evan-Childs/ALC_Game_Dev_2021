@@ -43,17 +43,6 @@ public class Weapons : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
 
         //set the velocity
-        bullet.GetComponent<RigidBody>().velocity = muzzle.forward * bulletSpeed;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
     }
 }
