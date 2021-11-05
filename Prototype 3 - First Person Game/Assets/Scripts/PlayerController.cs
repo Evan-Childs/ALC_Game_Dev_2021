@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //movement variables
+    [Header("Movement")]//movement variables
     public float moveSpeed;
     public float jumpForce;
-    //camera variables
+    [Header("Camera")]//camera variables
     public float lookSensitivity; //mouse look sensitivity
     public float maxLookX; //Lowest position we can look(neck hitting body)
     public float minLookX; // Highest poisition we can look
     private float rotX; // Current X rotation of the camera
-    //Gameobjects & Component variables
+    [Header("Gameobjects & Components")]//Gameobjects & Component variables
     private Camera cam;
     private Rigidbody rb;
     private Weapons weapons;
+
+    [Header("Stats")]
+    public int curHP;
+    public int maxHP;
 
     void Awake()
     {
@@ -27,6 +31,18 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void TakeDamage(int damage)
+    {
+        curHP -= damage;
+        if(curHP <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+
+    }
+ 
     // Update is called once per frame
     void Update()
     {
