@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     private List<Vector3> path;
     private Weapons weapon;
-    private GameObject target;
+    public GameObject target;
     // Start is called before the first frame update
     void Start()
     {
