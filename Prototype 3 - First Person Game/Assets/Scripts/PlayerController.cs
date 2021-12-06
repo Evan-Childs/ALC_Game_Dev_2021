@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]//movement variables
     public float moveSpeed;
+    private float sprintSpeed;
+    private bool isShiftKeyDown;
     public float jumpForce;
     [Header("Camera")]//camera variables
     public float lookSensitivity; //mouse look sensitivity
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool isShiftKeyDown = Input.GetKey(KeyCode.LeftShift);
         Move();
         CamLook();
         //Jump when spacebar is pressed
@@ -62,8 +65,12 @@ public class PlayerController : MonoBehaviour
     
     void Move()
     {
-        float x = Input.GetAxis("Horizontal") * moveSpeed;
-        float z = Input.GetAxis("Vertical") * moveSpeed;
+        if(isShiftKeyDown == true)
+            sprintSpeed = 3f;
+        if(isShiftKeyDown == false)
+            sprintSpeed = 1f;
+        float x = Input.GetAxis("Horizontal") * moveSpeed * sprintSpeed;
+        float z = Input.GetAxis("Vertical") * moveSpeed * sprintSpeed;
 
         Vector3 dir = transform.right * x + transform.forward * z;
         //Jump direction
