@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]//movement variables
     public float moveSpeed;
-    private float sprintSpeed;
+    public float sprintSpeed;
     private bool isShiftKeyDown;
     public float jumpForce;
     [Header("Camera")]//camera variables
@@ -42,13 +42,20 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-
+            Destroy(gameObject);
     }
  
     // Update is called once per frame
     void Update()
     {
-        bool isShiftKeyDown = Input.GetKey(KeyCode.LeftShift);
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            isShiftKeyDown = true;
+        }
+        else
+        {
+            isShiftKeyDown = false;
+        }
         Move();
         CamLook();
         //Jump when spacebar is pressed
@@ -66,7 +73,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         if(isShiftKeyDown == true)
-            sprintSpeed = 3f;
+            sprintSpeed = 2f;
         if(isShiftKeyDown == false)
             sprintSpeed = 1f;
         float x = Input.GetAxis("Horizontal") * moveSpeed * sprintSpeed;
