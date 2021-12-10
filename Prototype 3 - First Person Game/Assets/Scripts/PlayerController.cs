@@ -36,13 +36,14 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         curHP -= damage;
+        GameUI.instance.UpdateHealthBar(curHP, maxHP);
         if(curHP <= 0)
             Die();
     }
 
     void Die()
     {
-            Destroy(gameObject);
+        Destroy(gameObject);
     }
  
     // Update is called once per frame
@@ -108,10 +109,12 @@ public class PlayerController : MonoBehaviour
     public void GiveHealth(int amountToGive)
     {
         curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
+        GameUI.instance.UpdateHealthBar(curHP, maxHP);
     }
 
     public void GiveAmmo(int amountToGive)
     {
         weapons.curAmmo = Mathf.Clamp(weapons.curAmmo + amountToGive, 0, weapons.maxAmmo);
+        GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
     }
 }

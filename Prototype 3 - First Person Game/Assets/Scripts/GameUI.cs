@@ -46,11 +46,11 @@ public class GameUI : MonoBehaviour
 
     public void TogglePauseMenu(bool paused)
     {
-            pauseMenu.setActive(paused);
+            pauseMenu.SetActive(paused);
     }
     public void SetEndGameScreen(bool won, int score)
     {
-        endGameScreen.setActive(true);
+        endGameScreen.SetActive(true);
         endGameHeaderText.text = won == true ? "You Win!" : "You Lost";
         endGameHeaderText.color = won == true ? Color.green : Color.red;
         endGameScoreText.text = "<b>Score</b>\n" + score;
@@ -58,16 +58,16 @@ public class GameUI : MonoBehaviour
 
     public void OnResumeButton()
     {
-        
+        GameManager.instance.TogglePauseGame();
     }
     
     public void OnRestartButton()
     {
-        SceneManager.loadScene("Game");
+        SceneManager.LoadScene("Game");
     }
 
     public void OnMenuButton()
     {
-        SceneManage.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");
     }
 }
