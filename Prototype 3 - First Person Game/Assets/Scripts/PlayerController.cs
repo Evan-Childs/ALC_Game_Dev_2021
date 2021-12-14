@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void Start()
+    {
+        GameUI.instance.UpdateHealthBar(curHP, maxHP);
+    }
+
     public void TakeDamage(int damage)
     {
         curHP -= damage;
@@ -43,12 +48,15 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        GameManager.instance.LoseGame();
     }
  
     // Update is called once per frame
     void Update()
     {
+        //Don't do anything when game is paused
+        if(GameManager.instance.gamePaused == true)
+            return;
         if(Input.GetKey(KeyCode.LeftShift))
         {
             isShiftKeyDown = true;
@@ -115,6 +123,6 @@ public class PlayerController : MonoBehaviour
     public void GiveAmmo(int amountToGive)
     {
         weapons.curAmmo = Mathf.Clamp(weapons.curAmmo + amountToGive, 0, weapons.maxAmmo);
-        GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
+        GameUI.instance.UpdateAmmoText(weapons.curAmmo, weapons.maxAmmo);
     }
 }

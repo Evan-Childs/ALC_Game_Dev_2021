@@ -28,6 +28,11 @@ public class GameUI : MonoBehaviour
         //Set the instance to this script
         instance = this;
     }
+
+    void Start()
+    {
+
+    }
     
     public void UpdateHealthBar(int curHP, int maxHP)
     {

@@ -24,6 +24,12 @@ public class Weapons : MonoBehaviour
             isPlayer = true;
         }
     }
+
+    public void Start()
+    {
+        GameUI.instance.UpdateScoreText(0);
+        GameUI.instance.UpdateAmmoText(curAmmo, maxAmmo);
+    }
     
     public bool CanShoot()
     {
@@ -50,6 +56,6 @@ public class Weapons : MonoBehaviour
         if(isPlayer)
         {
             GameUI.instance.UpdateAmmoText(curAmmo, maxAmmo);
-        } 
+        }
     }
 }
