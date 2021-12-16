@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public void Start()
     {
         GameUI.instance.UpdateHealthBar(curHP, maxHP);
+        GameUI.instance.UpdateScoreText(0);
+        GameUI.instance.UpdateAmmoText(weapons.curAmmo, weapons.maxAmmo);
     }
 
     public void TakeDamage(int damage)
@@ -85,6 +87,7 @@ public class PlayerController : MonoBehaviour
             sprintSpeed = 2f;
         if(isShiftKeyDown == false)
             sprintSpeed = 1f;
+        
         float x = Input.GetAxis("Horizontal") * moveSpeed * sprintSpeed;
         float z = Input.GetAxis("Vertical") * moveSpeed * sprintSpeed;
 

@@ -19,6 +19,8 @@ public class Pickup : MonoBehaviour
     private Vector3 startPos;
     private bool bobbingUp;
 
+    public AudioClip pickupSfx;
+
     void Start()
     {
         //set the start position
@@ -41,8 +43,10 @@ public class Pickup : MonoBehaviour
                 Player.GiveAmmo(value);
                 break;
             }
+            //play pickup audio clip
+            other.GetComponent<AudioSource>().PlayOneShot(pickupSfx);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()

@@ -14,13 +14,11 @@ public class GameManager : MonoBehaviour
     {
         //set the instance of this script
         instance = this;
-        GameUI.instance.SetEndGameScreen(false,curScore);
     }
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1.0f;
-
     }
 
     // Update is called once per frame

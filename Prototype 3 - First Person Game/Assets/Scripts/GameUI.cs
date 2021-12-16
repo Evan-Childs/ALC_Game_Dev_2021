@@ -51,7 +51,7 @@ public class GameUI : MonoBehaviour
 
     public void TogglePauseMenu(bool paused)
     {
-            pauseMenu.SetActive(paused);
+        pauseMenu.SetActive(paused);
     }
     public void SetEndGameScreen(bool won, int score)
     {
