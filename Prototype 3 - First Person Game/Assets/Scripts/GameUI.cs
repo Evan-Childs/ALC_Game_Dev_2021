@@ -27,6 +27,8 @@ public class GameUI : MonoBehaviour
     {
         //Set the instance to this script
         instance = this;
+        endGameScreen.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
     void Start()

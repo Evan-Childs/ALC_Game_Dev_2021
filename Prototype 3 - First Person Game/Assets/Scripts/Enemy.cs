@@ -77,7 +77,9 @@ public class Enemy : MonoBehaviour
         if(dist <= attackRange)
         {
             if(weapon.CanShoot())
-              weapon.Shoot();
+            {
+                weapon.Shoot();
+            }
         }
         else
         {
