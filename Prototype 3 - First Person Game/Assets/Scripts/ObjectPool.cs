@@ -16,7 +16,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    GameObject CreateNewObject()
+     GameObject CreateNewObject()
     {
         GameObject obj = Instantiate(objPrefab);
         obj.SetActive(false);

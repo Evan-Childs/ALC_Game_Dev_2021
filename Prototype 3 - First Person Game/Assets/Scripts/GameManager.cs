@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Cancel"))
+        if(Input.GetButtonDown("Cancel"))
         {
             TogglePauseGame();
         }
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = gamePaused == true ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
-    public void AddScore(int score)
+    public void AddScore(int score, int curScore)
     {
         curScore += score;
 

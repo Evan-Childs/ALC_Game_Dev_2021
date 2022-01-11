@@ -17,7 +17,7 @@ public class Weapons : MonoBehaviour
     private bool isPlayer;
 
     public AudioClip shootSfx;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Awake()
     {

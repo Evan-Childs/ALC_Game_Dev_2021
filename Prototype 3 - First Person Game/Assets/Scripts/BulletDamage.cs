@@ -17,7 +17,7 @@ public class BulletDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        damage = 10;
     }
 
     void OnTriggerEnter(Collider other)
