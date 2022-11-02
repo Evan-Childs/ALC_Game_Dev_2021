@@ -66,5 +66,6 @@ public class GameManager : MonoBehaviour
         GameUI.instance.SetEndGameScreen(false,curScore);
         Time.timeScale = 0.0f;
         gamePaused = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

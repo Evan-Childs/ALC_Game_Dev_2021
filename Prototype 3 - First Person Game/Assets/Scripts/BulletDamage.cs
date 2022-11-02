@@ -17,11 +17,12 @@ public class BulletDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = 10;
+        
     }
 
     void OnTriggerEnter(Collider other)
     {
+        damage = 10;
         //Did we hit the target aka player
         if(other.CompareTag("Player"))
             other.GetComponent<PlayerController>().TakeDamage(damage);

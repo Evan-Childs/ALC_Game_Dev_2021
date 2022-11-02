@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        maxHP = 100;
         curHP -= damage;
         if(curHP <= 0)
             Die();
